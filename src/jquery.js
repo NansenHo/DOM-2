@@ -1,4 +1,4 @@
-window.jQuery = function (selectorOrArray) {
+window.$ = window.jQuery = function (selectorOrArray) {
     let elements
     if (typeof selectorOrArray === 'string') {
         elements = document.querySelectorAll(selectorOrArray);
@@ -24,6 +24,7 @@ window.jQuery = function (selectorOrArray) {
                 const elements2 = Array.from(elements[i].querySelectorAll(selector))
                 array = array.concat(elements2)
             }
+            array.oldApi = this
             return jQuery(array)
         },
         oldApi: selectorOrArray.oldApi,
